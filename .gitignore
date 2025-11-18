@@ -6,7 +6,7 @@ dist
 
 # ckpt
 rynnvla-002/ckpts/
-rynnvla-002/output/
+rynnvla-002/outputs/
 
 # data
 rynnvla-002/processed_data/

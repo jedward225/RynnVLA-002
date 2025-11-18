@@ -10,21 +10,21 @@ wd=0.1
 dropout=0.05
 z_loss_weight=1e-5
 
-data_config_train=../../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
-data_config_val_ind=../../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
-data_config_val_ood=../../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
+data_config_train=../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
+data_config_val_ind=../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
+data_config_val_ood=../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
 time_horizon=10
 epoch_num=35
 task_suite=libero_spatial
 exp_name=his_2_third_view_wrist_w_state_10_256_abiw
 his_setting=his_2_third_view_wrist_w_state
 eval_setting=continous
-checkpoint_path=../../outputs/"$task_suite"/"$exp_name"/"epoch$epoch_num"
+checkpoint_path=../outputs/"$task_suite"/"$exp_name"/"epoch$epoch_num"
 
-base_output_dir=../../eval_outputs/"$task_suite"/"$exp_name"/"epoch_$epoch_num"/"$eval_setting"
+base_output_dir=../eval_outputs/"$task_suite"/"$exp_name"/"epoch_$epoch_num"/"$eval_setting"
 mkdir -p "$base_output_dir"
 
-torchrun --nnodes=1 --nproc_per_node=1 --master_port=$((29502)) ../../eval_solver_libero_continous_w_state.py \
+torchrun --nnodes=1 --nproc_per_node=1 --master_port=$((29502)) ../eval_solver_libero_continous_w_state.py \
     --device 0 \
     --task_suite_name $task_suite \
     --his $his_setting \

@@ -25,25 +25,30 @@ echo "master_addr: $MASTER_ADDR"
 echo "master_port: $MASTER_PORT"
 echo "rank: $RANK"
 
-lr=5e-6
-wd=0.15
-dropout=0.08
+# lr=5e-6
+lr=1e-5
+wd=0.1
+dropout=0.05
 z_loss_weight=1e-5
 
-data_config_train=../../configs/libero_goal/his_2_third_view_wrist_w_state_5_256_pretokenize.yaml
-data_config_val_ind=../../configs/libero_goal/his_2_third_view_wrist_w_state_5_256_pretokenize.yaml
-data_config_val_ood=../../configs/libero_goal/his_2_third_view_wrist_w_state_5_256_pretokenize.yaml
-time_horizon=5
+data_config_train=../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_nopretokenize.yaml
+data_config_val_ind=../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_nopretokenize.yaml
+data_config_val_ood=../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_nopretokenize.yaml
+time_horizon=10
 
-exp_name=his_2_third_view_wrist_w_state_5_256_abiw
-output_dir=../../outputs/libero_goal
+exp_name=his_2_third_view_wo_wrist_w_state_10_256_abiw
+output_dir=../outputs/libero_spatial
 mkdir -p "$output_dir"/"$exp_name"
 
-# torchrun --master_addr=$MASTER_ADDR --master_port=$MASTER_PORT --nproc_per_node=$NPROC_PER_NODE --nnodes=$WORLD_SIZE --node_rank=$RANK ../pretrain_solver_awm_w_ck_action_head.py \
-torchrun --nnodes=1 --nproc_per_node=8 --master_port=30001 ../pretrain_solver_awm_w_ck_action_head.py \
---train_only True \
+# torchrun --nnodes=1 --nproc_per_node=8 --master_port=30001 ../pretrain_solver_awm_w_ck_action_head.py \
+torchrun --master_addr=$MASTER_ADDR --master_port=$MASTER_PORT --nproc_per_node=$NPROC_PER_NODE --nnodes=$WORLD_SIZE --node_rank=$RANK ../pretrain_solver_awm_w_ck_action_head.py \
 --disable_length_clustering \
---init_from ../../ckpts/starting_point \
+--train_only True \
+--preprocess false \
+--with_action \
+--with_world_model \
+--resolution 256 \
+--init_from ../ckpts/starting_point \
 --ablation 0 \
 --model_size 7B \
 --batch_size 8 \
@@ -59,7 +64,7 @@ torchrun --nnodes=1 --nproc_per_node=8 --master_port=30001 ../pretrain_solver_aw
 --data_config_train $data_config_train \
 --data_config_val_ind $data_config_val_ind \
 --data_config_val_ood $data_config_val_ood \
---num_workers 8 \
+--num_workers 16 \
 --output_dir "$output_dir"/"$exp_name" \
 --checkpointing \
 --max_seq_len 4096 \

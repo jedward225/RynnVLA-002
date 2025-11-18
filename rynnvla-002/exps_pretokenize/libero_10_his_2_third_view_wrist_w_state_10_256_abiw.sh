@@ -25,25 +25,28 @@ echo "master_addr: $MASTER_ADDR"
 echo "master_port: $MASTER_PORT"
 echo "rank: $RANK"
 
-lr=5e-6
-wd=0.1
-dropout=0.05
+lr=1e-5
+# wd=0.1
+# dropout=0.05
+wd=0.18
+dropout=0.1
 z_loss_weight=1e-5
 
-data_config_train=../../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
-data_config_val_ind=../../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
-data_config_val_ood=../../configs/libero_spatial/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
+data_config_train=../configs/libero_10/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
+data_config_val_ind=../configs/libero_10/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
+data_config_val_ood=../configs/libero_10/his_2_third_view_wrist_w_state_10_256_pretokenize.yaml
 time_horizon=10
 
-exp_name=his_2_third_view_wrist_w_state_10_256_abiw
-output_dir=../outputs/libero_spatial
+exp_name=his_2_third_view_wrist_w_state_10_256_abiw_lr1e-5
+output_dir=../outputs/libero_10
 mkdir -p "$output_dir"/"$exp_name"
 
 # torchrun --master_addr=$MASTER_ADDR --master_port=$MASTER_PORT --nproc_per_node=$NPROC_PER_NODE --nnodes=$WORLD_SIZE --node_rank=$RANK ../pretrain_solver_awm_w_ck_action_head.py \
 torchrun --nnodes=1 --nproc_per_node=8 --master_port=30001 ../pretrain_solver_awm_w_ck_action_head.py \
 --train_only True \
 --disable_length_clustering \
---init_from ../../ckpts/starting_point \
+--init_from ../ckpts/starting_point \
+--tokenizer_path /public/hz_oss/cenjun/hug_models/models--Alpha-VLLM--Lumina-mGPT-7B-768/snapshots/9624463a82ea5ce814af9b561dcd08a31082c3af \
 --ablation 0 \
 --model_size 7B \
 --batch_size 8 \

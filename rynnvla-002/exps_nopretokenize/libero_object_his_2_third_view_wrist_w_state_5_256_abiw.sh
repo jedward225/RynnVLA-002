@@ -31,13 +31,13 @@ wd=0.1
 dropout=0.05
 z_loss_weight=1e-5
 
-data_config_train=../../configs/libero_10/his_2_third_view_wrist_w_state_10_256_nopretokenize.yaml
-data_config_val_ind=../../configs/libero_10/his_2_third_view_wrist_w_state_10_256_nopretokenize.yaml
-data_config_val_ood=../../configs/libero_10/his_2_third_view_wrist_w_state_10_256_nopretokenize.yaml
-time_horizon=10
+data_config_train=../configs/libero_object/his_2_third_view_wrist_w_state_5_256_nopretokenize.yaml
+data_config_val_ind=../configs/libero_object/his_2_third_view_wrist_w_state_5_256_nopretokenize.yaml
+data_config_val_ood=../configs/libero_object/his_2_third_view_wrist_w_state_5_256_nopretokenize.yaml
+time_horizon=5
 
-exp_name=his_2_third_view_wo_wrist_w_state_10_256_abiw
-output_dir=/mnt/workspace/workgroup/yuanyq/libero_output/libero_10
+exp_name=his_2_third_view_wo_wrist_w_state_5_256_abiw
+output_dir=../outputs/libero_object
 mkdir -p "$output_dir"/"$exp_name"
 
 # torchrun --nnodes=1 --nproc_per_node=8 --master_port=30001 ../pretrain_solver_awm_w_ck_action_head.py \
@@ -48,7 +48,7 @@ torchrun --master_addr=$MASTER_ADDR --master_port=$MASTER_PORT --nproc_per_node=
 --with_action \
 --with_world_model \
 --resolution 256 \
---init_from ../../ckpts/starting_point \
+--init_from ../ckpts/starting_point \
 --ablation 0 \
 --model_size 7B \
 --batch_size 8 \

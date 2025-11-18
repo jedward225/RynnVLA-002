@@ -126,8 +126,8 @@ class PretrainSolverBase_ck_action_head(ABC):
         else:
             self.log_writer = None
         
-        self.item_processor = FlexARItemProcessor(target_size=288)
-        self.item_processor_action = ItemProcessor(target_size=256)
+        self.item_processor = FlexARItemProcessor(target_size=288, tokenizer=self.args.tokenizer_path)
+        self.item_processor_action = ItemProcessor(target_size=256, tokenizer=self.args.tokenizer_path)
         
         if self.args.preprocess=='false':
             if self.args.with_state:
@@ -273,7 +273,6 @@ class PretrainSolverBase_ck_action_head(ABC):
         parser.add_argument("--ablation", type=str, choices=["0", "1", "2", "3", "4", "5"], default="fp32")
         parser.add_argument("--loss_ct_weights", type=int, default=10)
         parser.add_argument("--loss_img_weights", type=float, default=0.04)
-        parser.add_argument("--tokenizer_path", type=str, default="Alpha-VLLM/Lumina-mGPT-7B-768")
 
 
         return parser

@@ -180,6 +180,7 @@ cd rynnvla-002/data
 python pretoken_state_action_model.py --task goal --resolution 256 --with_state --img_names imgs_third_view imgs_wrist --his 2 --len_action 5 --tokenizer_path Alpha-VLLM/Lumina-mGPT-7B-768
 python pretoken_world_model.py --task goal --resolution 256 --img_name imgs_third_view imgs_wrist --tokenizer_path Alpha-VLLM/Lumina-mGPT-7B-768
 bash concate_record_libero.sh
+python concate_action_world_model_data_libero.py --source_dir_patterns libero_goal_his_2_{}_third_view_wrist_w_state_5_256 libero_goal_his_1_{}_third_view_wrist_a2i_256 --all_patterns libero_goal_his_2_third_view_wrist_w_state_5_256_abiw
 ```
 
 #### Step 2: Prepare data configs
@@ -189,7 +190,7 @@ Set the correct data path in the config files in `rynnvla-002/configs/libero_goa
 Now you can start training with your training scripts:
 ```bash
 # Libero goal, 256 resolution
-cd rynnvla-002/exps_256/pretokenize
+cd rynnvla-002/exps_pretokenize
 bash libero_goal_his_2_third_view_wrist_w_state_5_256_abiw.sh
 ```
 
@@ -203,22 +204,22 @@ Set the correct data path in the config files in `rynnvla-002/configs/libero_goa
 #### Step 2: Start training
 ```bash
 # Libero goal, 256 resolution
-cd rynnvla-002/exps_256/nopretokenize
+cd rynnvla-002/exps_nopretokenize
 bash libero_goal_his_2_third_view_wrist_w_state_5_256_abiw.sh
 ```
 
 
 ## ✅ Evaluation
 ### Step 1: Prepare evaluation scripts
-Set the `checkpoint_path` in the bash files in `rynnvla-002/exps_256/eval/` to the model path. You can download our trained in Model Zoo or train yourself.
+Set the `checkpoint_path` in the bash files in `rynnvla-002/evals_libero/` to the model path. You can download our trained in Model Zoo or train yourself.
 
 ### Step 2: Start evaluation
 ```bash
 # Libero goal, 256 resolution, continous
-cd rynnvla-002/exps_256/eval
+cd rynnvla-002/evals_libero
 bash eval_libero_goal_his_2_third_view_wrist_w_state_5_256_abiw_continous.sh
 # Libero goal, 256 resolution, discrete
-cd rynnvla-002/exps_256/eval
+cd rynnvla-002/evals_libero
 bash eval_libero_goal_his_2_third_view_wrist_w_state_5_256_abiw_discrete.sh
 ```
 

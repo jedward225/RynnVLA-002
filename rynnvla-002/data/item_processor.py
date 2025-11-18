@@ -64,7 +64,7 @@ class FlexARItemProcessor(MMConvItemProcessor):
 
     def __init__(
         self,
-        tokenizer= "/public/hz_oss/cenjun/hug_models/models--Alpha-VLLM--Lumina-mGPT-7B-768/snapshots/9624463a82ea5ce814af9b561dcd08a31082c3af",
+        tokenizer= "Alpha-VLLM/Lumina-mGPT-7B-768",
         conv_template=Conversation,
         target_size=512,
     ):
