@@ -46,7 +46,8 @@ World Model generates the next frame given the current frame and action control.
 
 ## 🛠️ Requirements and Installation
 ```
-conda env create -f environment.yml
+pip install -r requirements.txt
+pip install flash-attn --no-build-isolation
 git clone https://github.com/Lifelong-Robot-Learning/LIBERO.git
 cd LIBERO
 pip install -e .
