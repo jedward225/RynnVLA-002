@@ -25,8 +25,7 @@ echo "master_addr: $MASTER_ADDR"
 echo "master_port: $MASTER_PORT"
 echo "rank: $RANK"
 
-# lr=5e-6
-lr=1e-5
+lr=8e-6
 wd=0.1
 dropout=0.05
 z_loss_weight=1e-5
