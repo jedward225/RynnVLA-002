@@ -243,7 +243,7 @@ bash libero_goal_his_2_third_view_wrist_w_state_5_256_abiw.sh
 ```
 
 
-## ✅ Evaluation
+### ✅ Evaluation
 ### Step 1: Prepare evaluation scripts
 Set the `checkpoint_path` in the bash files in `rynnvla-002/evals_libero/` to the model path. You can download our trained in Model Zoo or train yourself.
 
@@ -256,6 +256,38 @@ bash eval_libero_goal_his_2_third_view_wrist_w_state_5_256_abiw_continous.sh
 cd rynnvla-002/evals_libero
 bash eval_libero_goal_his_2_third_view_wrist_w_state_5_256_abiw_discrete.sh
 ```
+
+
+## 🗝️ Wrold Model Training on LIBERO
+For world model training, we set image_resolution to 512.
+### Pipeline1: Pretokenize
+#### Step 1: Libero Data Preparation
+
+Preprocess the dataset as described above, ensuring the `image_resolution` is set to 512.
+Finally, use 
+```bash
+python concate_action_world_model_data_libero.py --source_dir_patterns libero_goal_his_1_train_third_view_wrist_a2i_512 --all_patterns libero_goal_his_1_train_third_view_wrist_a2i_512
+```
+to concate tokens.
+
+#### Step 2: Prepare data configs
+Set the correct data path in the config files in `rynnvla-002/configs/libero_goal/his_1_third_view_wrist_512_only_wroldmodel_pretokenize.yaml`.
+
+#### Step 3: Start Training
+```
+cd rynnvla-002/exps_libero_world_model
+bash libero_goal_his_1_third_view_wrist_512_pretokenize.sh
+```
+
+### Pipeline2: NoPretokenize
+First, set the correct data path in the config files in `rynnvla-002/configs/libero_goal/his_1_train_third_view_wrist_512_only_worldmodel_nopretokenize.yaml`.
+
+Then, start training:
+```
+cd rynnvla-002/exps_libero_world_model
+bash libero_goal_his_1_third_view_wrist_512_nopretokenize.sh
+```
+
 
 ## 🗝️ Training on LeRobot
 
