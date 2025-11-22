@@ -42,11 +42,29 @@ VLA model generates actions given the text instruction and image observations.
 | Input: Open the middle drawer of the cabinet. | Input: Pick up the alphabet soup and place it in the basket. | Input: Pick up the black bowl between the plate and the ramekin and place it on the plate. |
 <br>
 
-|         |         |         |  
-| :-----: | :-----: | :-----: |  
-| <div align="center"><video src="https://github.com/user-attachments/assets/21c79198-d714-4a96-baff-2462a7940225" autoplay loop muted></div> | <div align="center"><video src="https://github.com/user-attachments/assets/5d42d812-b023-42a3-aff2-2d700cc1b169" autoplay loop muted></div> | <div align="center"><video src="https://github.com/user-attachments/assets/c5411f26-2b1d-46a2-8560-5c95eede467d" autoplay loop muted></div> |
-| Input: Open the . | Input: Pick up  | Input: Pick up the b. |
-<br>
+<table>
+  <tr>
+    <td>
+      <video src="https://github.com/user-attachments/assets/b549c657-40ff-4c36-aa05-c0e9ead9b969" autoplay loop muted style="width:100%;"></video>
+      <div style="min-height: 40px; text-align:center;">
+        Input: Open the middle drawer of the cabinet.
+      </div>
+    </td>
+    <td>
+      <video src="https://github.com/user-attachments/assets/9ecc9310-269c-49e9-bcf9-891050297063" autoplay loop muted style="width:100%;"></video>
+      <div style="min-height: 40px; text-align:center;">
+        Input: Pick up the alphabet soup and place it in the basket.
+      </div>
+    </td>
+    <td>
+      <video src="https://github.com/user-attachments/assets/dfbd2bdd-0bfd-4326-88f6-5a0a0c6f4d31" autoplay loop muted style="width:100%;"></video>
+      <div style="min-height: 40px; text-align:center;">
+        Input: Pick up the black bowl between the plate and the ramekin and place it on the plate.
+      </div>
+    </td>
+  </tr>
+</table>
+
 
 ### World Model Results (Action + Image -> Image)
 World Model generates the next frame given the current frame and action control.
