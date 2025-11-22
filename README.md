@@ -38,7 +38,8 @@ VLA model generates actions given the text instruction and image observations.
 
 |         |         |         |  
 | :-----: | :-----: | :-----: |  
-| <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/action_model_open_the_middle_drawer_of_the_cabinet.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/action_model_pick_up_the_alphabet_soup_and_place_it_in_the_bask.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/action_model_pick_up_the_black_bowl_between_the_plate_and_the_r.mp4" type="video/mp4"></video> |
+| <video autoplay loop muted playsinline width="100%"><source src="https://github.com/user-attachments/assets/21c79198-d714-4a96-baff-2462a7940225" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://github.com/user-attachments/assets/5d42d812-b023-42a3-aff2-2d700cc1b169
+" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://github.com/user-attachments/assets/c5411f26-2b1d-46a2-8560-5c95eede467d" type="video/mp4"></video> |
 | Input: Open the middle drawer of the cabinet. | Input: Pick up the alphabet soup and place it in the basket. | Input: Pick up the black bowl between the plate and the ramekin and place it on the plate. |
 <br>
 
