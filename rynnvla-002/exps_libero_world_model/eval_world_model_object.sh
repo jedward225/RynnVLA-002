@@ -19,11 +19,12 @@ base_exp_name=world_model_results
 base_output_dir=../eval_outputs/"$base_exp_name"
 mkdir -p "$base_output_dir"
 
-for i in {0..3}
+for i in {0..7}
 do
     torchrun --nnodes=1 --nproc_per_node=1 --master_port=$((17500+i+5)) ../eval_solver_libero_g_video_512_third_wrist.py \
     --device $((i)) \
     --half $((i+1)) \
+    --task_suite_name object \
     --no_auto_resume \
     --resume_path "your ckpt path" \
     --eval_only True \

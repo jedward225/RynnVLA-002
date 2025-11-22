@@ -16,7 +16,6 @@ RynnVLA-002: A Unified Vision-Language-Action and World Model</a></h3>
 
 <video controls width="100%">
     <source src="rynnvla-002/assets/demo_multi_ann_crf_2.mp4" type="video/mp4">
-    你的浏览器不支持HTML5视频标签。
 </video>
 
 
@@ -70,37 +69,37 @@ pip install -e .
 
 | Model    |    HF Link        |    Continous Action SR (%)     | Discrete Action SR (%) |
 | :--------------------: | :------------------------------------------------------------: | :--------------------: | :--------------------: |
-| LIBERO-Spatial       | []() | 99.0 | 94.2 |
-| LIBERO-Object       | []() | 99.8 | 96.8 |
-| LIBERO-Goal | []() | 96.4 | 94.6 |
-| LIBERO-Long | []() | 94.4 | 87.6 |
+| LIBERO-Spatial       | [Alibaba-DAMO-Academy/RynnVLA-002/VLA_model_256/libero_spatial](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/VLA_model_256/libero_spatial) | 99.0 | 94.2 |
+| LIBERO-Object       | [Alibaba-DAMO-Academy/RynnVLA-002/VLA_model_256/libero_object](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/VLA_model_256/libero_object) | 99.8 | 96.8 |
+| LIBERO-Goal | [Alibaba-DAMO-Academy/RynnVLA-002/VLA_model_256/libero_goal](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/VLA_model_256/libero_goal) | 96.4 | 94.6 |
+| LIBERO-Long | [Alibaba-DAMO-Academy/RynnVLA-002/VLA_model_256/libero_10](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/VLA_model_256/libero_10) | 94.4 | 87.6 |
 <br>
 
 ### World Model (512 * 512)
 
 | *Goal* | HF Link |FVD↓ | PSNR↑ | SSIM↑ | LPIPS↓ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| World Model | | 370.0 | 22.25 | 77.84 | 19.70 |
-| Action World Model |  | 336.8 | 22.13 | 78.13 | 19.43 |
+| World Model |[Alibaba-DAMO-Academy/RynnVLA-002/World_model_512/libero_goal](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/World_model_512/libero_goal) | 370.0 | 22.25 | 77.84 | 19.70 |
+| Action World Model | [Alibaba-DAMO-Academy/RynnVLA-002/Action_World_model_512/libero_goal](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/Action_World_model_512/libero_goal) | 336.8 | 22.13 | 78.13 | 19.43 |
 
 | *Object* | HF Link | FVD↓ | PSNR↑ | SSIM↑ | LPIPS↓ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| World Model | | 1141.6 | 20.31 | 59.59 | 27.30 |
-| Action World Model |  | 877.2 | 22.18 | 65.03 | 22.60 |
+| World Model | [Alibaba-DAMO-Academy/RynnVLA-002/World_model_512/libero_object](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/World_model_512/libero_object)| 1141.6 | 20.31 | 59.59 | 27.30 |
+| Action World Model | [Alibaba-DAMO-Academy/RynnVLA-002/Action_World_model_512/libero_object](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/Action_World_model_512/libero_object) | 877.2 | 22.18 | 65.03 | 22.60 |
 
 | *Spatial* | HF Link | FVD↓ | PSNR↑ | SSIM↑ | LPIPS↓ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| World Model | | 405.4 | 22.32 | 79.15 | 20.28 |
-| Action World Model | | 373.1 | 23.88 | 82.41 | 16.33 |
+| World Model | [Alibaba-DAMO-Academy/RynnVLA-002/World_model_512/libero_spatial](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/World_model_512/libero_spatial)| 405.4 | 22.32 | 79.15 | 20.28 |
+| Action World Model | [Alibaba-DAMO-Academy/RynnVLA-002/Action_World_model_512/libero_spatial](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/Action_World_model_512/libero_spatial)| 373.1 | 23.88 | 82.41 | 16.33 |
 
 | *Long* | HF Link | FVD↓ | PSNR↑ | SSIM↑ | LPIPS↓ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| World Model | | 557.73 | 18.24 | 69.16 | 31.60 |
-| Action World Model |  | 427.86 | 19.36 | 72.19 | 27.78 |
+| World Model | [Alibaba-DAMO-Academy/RynnVLA-002/World_model_512/libero_10](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/World_model_512/libero_10)| 557.73 | 18.24 | 69.16 | 31.60 |
+| Action World Model | [Alibaba-DAMO-Academy/RynnVLA-002/Action_World_model_512/libero_10](https://huggingface.co/Alibaba-DAMO-Academy/RynnVLA-002/tree/main/Action_World_model_512/libero_10) | 427.86 | 19.36 | 72.19 | 27.78 |
 
 
 
-## 🗝️ Training on LIBERO
+## 🗝️ VLA Model Training on LIBERO
 We evaluate four tasks of the LIBERO benchmark, including [spatial, obejct, goal, 10]. Here we take LIEBRO goal and 256 resolution as an example.
 
 We offer two types of training pipelines:
@@ -120,6 +119,9 @@ python regenerate_libero_dataset_filter_no_op.py \
 ```
 
 After filtering, you can choose between the `Pretokenize` or `NoPretokenize` training pipeline. The `Pretokenize` pipeline offers faster training speeds, while the `NoPretokenize` option eliminates the need for preprocessing.
+
+#### Step 0: Download the Chameleon weights
+Download the Chameleon [tokenizer](https://huggingface.co/Alibaba-DAMO-Academy/WorldVLA/tree/main/chameleon/tokenizer), [base-model](https://huggingface.co/Alibaba-DAMO-Academy/WorldVLA/tree/main/base_model) and [starting point](https://huggingface.co/Alibaba-DAMO-Academy/WorldVLA/tree/main/chameleon/starting_point) weights, put them under the `rynnvla-002/ckpts/chameleon/tokenizer`, `rynnvla-002/ckpts/chameleon/base_model`, and `rynnvla-002/ckpts/starting_point`.
 
 
 ### Pipeline1: Pretokenize
@@ -243,7 +245,7 @@ bash libero_goal_his_2_third_view_wrist_w_state_5_256_abiw.sh
 ```
 
 
-### ✅ Evaluation
+## ✅ VLA Model Evaluation on LIBERO
 ### Step 1: Prepare evaluation scripts
 Set the `checkpoint_path` in the bash files in `rynnvla-002/evals_libero/` to the model path. You can download our trained in Model Zoo or train yourself.
 
@@ -258,7 +260,7 @@ bash eval_libero_goal_his_2_third_view_wrist_w_state_5_256_abiw_discrete.sh
 ```
 
 
-## 🗝️ Wrold Model Training on LIBERO
+## 🗝️ World Model Training on LIBERO
 For world model training, we set image_resolution to 512.
 ### Pipeline1: Pretokenize
 #### Step 1: Libero Data Preparation
@@ -271,7 +273,7 @@ python concate_action_world_model_data_libero.py --source_dir_patterns libero_go
 
 
 #### Step 2: Prepare data configs
-Set the correct data path in the config files in `rynnvla-002/configs/libero_goal/his_1_third_view_wrist_512_only_wroldmodel_pretokenize.yaml`.
+Set the correct data path in the config files in `rynnvla-002/configs/libero_goal/his_1_third_view_wrist_512_only_worldmodel_pretokenize.yaml`.
 
 #### Step 3: Start Training
 ```
@@ -288,6 +290,18 @@ cd rynnvla-002/exps_libero_world_model
 bash libero_goal_his_1_third_view_wrist_512_nopretokenize.sh
 ```
 
+## ✅ World Model Evaluation on LIBERO
+We evaluate the world model performance on the valiation set, which is stored in `rynnvla-002/exps_libero_world_model/goal_val_ind_trajectory_paths.json`. If the path is not the same as yours, use `rynnvla-002/exps_libero_world_model/extract_world_model_val_ind_trj.py` to generate one. Then run the evaluation:
+```
+cd rynnvla-002/exps_libero_world_model
+bash eval_world_model_goal.sh
+```
+Then calculate the generation performance of world model and action world model:
+```
+python calculate_world_model_performance.py \
+    --folder_world_model "" \
+    --folder_action_world_model ""
+```
 
 ## 🗝️ Training on LeRobot
 
@@ -381,6 +395,23 @@ If you find the project helpful for your research, please consider citing our pa
   year={2025}
 }
 ```
+
+<details open><summary>💡 Other featured projects from our RynnBot family ✨. </summary><p>
+    
+<!--  may -->
+> [**RynnVLA-001: A Vision-Language-Action Model Boosted by Generative Priors**](https://github.com/alibaba-damo-academy/RynnVLA-001) <br>
+> Yuming Jiang, Siteng Huang, Shengke Xue, Yaxi Zhao, Jun Cen, Sicong Leng, Jiayan Guo, Kexiang Wang, Kehan Li, Mingxiu Chen, Fan Wang, Deli Zhao, Xin Li <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/alibaba-damo-academy/RynnVLA-001)  [![github](https://img.shields.io/github/stars/alibaba-damo-academy/RynnVLA-001.svg?style=social)](https://github.com/alibaba-damo-academy/RynnVLA-001)  [![arXiv](https://img.shields.io/badge/Arxiv-2508.14160-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2509.15212)<be>
+
+> [**RynnEC: Bringing MLLMs into Embodied World**](https://github.com/alibaba-damo-academy/RynnEC) <br>
+> Ronghao Dang*, Yuqian Yuan*, Yunxuan Mao*, Kehan Li*, Jiangpin Liu, Zhikai Wang, Fan Wang, Deli Zhao, Xin Li <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/alibaba-damo-academy/RynnEC)  [![github](https://img.shields.io/github/stars/alibaba-damo-academy/RynnEC.svg?style=social)](https://github.com/alibaba-damo-academy/RynnEC) [![arXiv](https://img.shields.io/badge/Arxiv-2508.14160-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2508.14160) <be> 
+
+> [**RynnRCP: Open Robotics Context Protocol and RobotMotion**](https://github.com/alibaba-damo-academy/RynnRCP) <br>
+> RynnBot Team <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/alibaba-damo-academy/RynnRCP)  [![github](https://img.shields.io/github/stars/alibaba-damo-academy/RynnRCP.svg?style=social)](https://github.com/alibaba-damo-academy/RynnRCP)  <br>
+
+</p></details>
 
 ## Acknowledgment <a name="acknowledgment"></a>
 This project builds upon [Lumina-mGPT](https://github.com/Alpha-VLLM/Lumina-mGPT), [Chemeleon](https://github.com/facebookresearch/chameleon), and [OpenVLA](http://github.com/openvla/openvla). We thank these teams for their open-source contributions.

@@ -2,7 +2,7 @@ import json
 import os
 
 # 定义输入和输出文件名
-input_json_file = '/mnt/PLNAS/cenjun/libero/processed_data/convs/libero_10_his_1_val_ind_third_view_wrist_a2i_512.json'  # <-- 将这里替换成你的JSON文件名
+input_json_file = '../processed_data/convs/libero_10_his_1_val_ind_third_view_wrist_a2i_512.json'  # <-- 将这里替换成你的JSON文件名
 output_json_file = '10_val_ind_trajectory_paths.json'
 
 # 使用集合(set)来存储唯一的路径，可以自动处理重复项

@@ -76,7 +76,7 @@ class Solver(PretrainSolverBase):
         parser.add_argument("--dropout", type=float, default=0.0)
         parser.add_argument("--z_loss_weight", type=float, default=0.0)
         parser.add_argument("--model_size", type=str, default="7B", choices=["7B", "34B"])
-        parser.add_argument("--task_suite_name", type=str, default="libero_spatial", choices=["libero_spatial", "libero_object", "libero_goal", "libero_10",])
+        parser.add_argument("--task_suite_name", type=str, default="spatial", choices=["spatial", "object", "goal", "10",])
         parser.add_argument("--device", default=0, type=int, help="gpu device")
         parser.add_argument("--head", type=str, default="dis", choices=["dis", "ct"])
         parser.add_argument("--his", type=str, default="1h_1a", choices=["1h_1a", "2h_1a", "4h_1a", "2h_2a", "4h_4a", "1a2i"])
@@ -146,30 +146,31 @@ class Solver(PretrainSolverBase):
         self.model.eval()
         item_processor = ItemProcessor(target_size=512)
         
-        file_path = '/public/hz_oss/cenjun/WorldVLA/worldvla/exps_512_part_a100/spatial_val_ind_trajectory_paths.json'
+        file_path = f'{args.task_suite_name}_val_ind_trajectory_paths.json'
         
         with open(file_path, 'r') as f:
             data = json.load(f)
 
-        partition_size = len(data) // 4
+        num_available_gpus = torch.cuda.device_count()
+        partition_size = len(data) // num_available_gpus
         if args.half == 0:
             # If half is 0, use the full range
             episode_range = range(len(data))
-        elif 1 <= args.half <= 4:
-            # For half values 1 to 4, calculate the corresponding partition
+        elif 1 <= args.half <= num_available_gpus:
+            # For half values 1 to num_available_gpus, calculate the corresponding partition
             start_index = (args.half - 1) * partition_size
-            end_index = args.half * partition_size if args.half < 4 else len(data)
+            end_index = args.half * partition_size if args.half < num_available_gpus else len(data)
             episode_range = range(start_index, end_index)
         else:
             # Handle invalid values of args.half
-            raise ValueError("args.half must be an integer between 0 and 4.")
+            raise ValueError("args.half must be an integer between 0 and num_available_gpus.")
 
         total_episodes = 0
         
         for item in episode_range:
             task_name = ''
             trj_path = data[item]
-            trj_path = trj_path.replace("/mnt/PLNAS/cenjun/libero", "/public/hz_oss/cenjun/libero_data")
+            # trj_path = trj_path.replace("/mnt/PLNAS/cenjun/libero", "/public/hz_oss/cenjun/libero_data")
             
             action_path = os.path.join(trj_path, 'action')
             imgs_path = os.path.join(trj_path, 'imgs_third_view')
