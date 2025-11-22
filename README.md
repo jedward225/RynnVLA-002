@@ -15,7 +15,7 @@ RynnVLA-002: A Unified Vision-Language-Action and World Model</a></h3>
 </h5>
 
 <video controls width="100%">
-    <source src="https://github.com/alibaba-damo-academy/RynnVLA-002/raw/refs/heads/main/rynnvla-002/assets/demo_multi_ann_crf_2.mp4" type="video/mp4">
+    <source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/demo_multi_ann_crf_2.mp4" type="video/mp4">
 </video>
 
 
@@ -38,7 +38,7 @@ VLA model generates actions given the text instruction and image observations.
 
 |         |         |         |  
 | :-----: | :-----: | :-----: |  
-| ![Open drawer](rynnvla-002/assets/action_model_open_the_middle_drawer_of_the_cabinet.gif) | ![Pick up soup](rynnvla-002/assets/action_model_pick_up_the_alphabet_soup_and_place_it_in_the_bask.gif) | ![Pick up bowl](rynnvla-002/assets/action_model_pick_up_the_black_bowl_between_the_plate_and_the_r.gif) |
+| <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/action_model_open_the_middle_drawer_of_the_cabinet.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/action_model_pick_up_the_alphabet_soup_and_place_it_in_the_bask.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/action_model_pick_up_the_black_bowl_between_the_plate_and_the_r.mp4" type="video/mp4"></video> |
 | Input: Open the middle drawer of the cabinet. | Input: Pick up the alphabet soup and place it in the basket. | Input: Pick up the black bowl between the plate and the ramekin and place it on the plate. |
 <br>
 
@@ -47,10 +47,11 @@ World Model generates the next frame given the current frame and action control.
 
 |         |         |         |  
 | :-----: | :-----: | :-----: |  
-| ![Open drawer](rynnvla-002/assets/pickuptheblackbowlandplaceitontheplate_front.gif) | ![Pick up soup](rynnvla-002/assets/put_the_cream_cheese_box_in_the_basket_front.gif) | ![Pick up bowl](rynnvla-002/assets/putthebowlontopofthecabinet_front.gif) |
-| ![Open drawer](rynnvla-002/assets/pickuptheblackbowlandplaceitontheplate_wrist.gif) | ![Pick up soup](rynnvla-002/assets/put_the_cream_cheese_box_in_the_basket_wrist.gif) | ![Pick up bowl](rynnvla-002/assets/putthebowlontopofthecabinet_wrist.gif) |
+| <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/pickuptheblackbowlandplaceitontheplate_front.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/put_the_cream_cheese_box_in_the_basket_front.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/putthebowlontopofthecabinet_front.mp4" type="video/mp4"></video> |
+| <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/pickuptheblackbowlandplaceitontheplate_wrist.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/put_the_cream_cheese_box_in_the_basket_wrist.mp4" type="video/mp4"></video> | <video autoplay loop muted playsinline width="100%"><source src="https://raw.githubusercontent.com/alibaba-damo-academy/RynnVLA-002/main/rynnvla-002/assets/putthebowlontopofthecabinet_wrist.mp4" type="video/mp4"></video> |
 | Input: Action sequence of "Pick up the black bowl and place it on the plate". | Input: Action sequence of "Put the cream cheese box in the basket front". | Input: Action sequence of "Put the bowl on top of the cabinet". |
 <br>
+
 
 ## 🛠️ Requirements and Installation
 ```
