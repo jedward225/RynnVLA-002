@@ -42,6 +42,19 @@ VLA model generates actions given the text instruction and image observations.
 | Input: Open the middle drawer of the cabinet. | Input: Pick up the alphabet soup and place it in the basket. | Input: Pick up the black bowl between the plate and the ramekin and place it on the plate. |
 <br>
 
+<table style="width:100%;border-collapse:collapse;">
+<tr>
+  <td style="text-align:center;"><b>Open the middle drawer of the cabinet.</b></td>
+  <td style="text-align:center;"><b>Pick up the alphabet soup and place it in the basket.</b></td>
+  <td style="text-align:center;"><b>Pick up the black bowl between the plate and the ramekin and place it on the plate.</b></td>
+</tr>
+<tr>
+  <td><video src="https://github.com/user-attachments/assets/21c79198-d714-4a96-baff-2462a7940225" style="object-fit:cover;" autoplay loop muted></video></td>
+  <td><video src="https://github.com/user-attachments/assets/5d42d812-b023-42a3-aff2-2d700cc1b169" style="object-fit:cover;" autoplay loop muted></video></td>
+  <td><video src="https://github.com/user-attachments/assets/c5411f26-2b1d-46a2-8560-5c95eede467d" style="object-fit:cover;" autoplay loop muted></video></td>
+</tr>
+</table>
+
 ### World Model Results (Action + Image -> Image)
 World Model generates the next frame given the current frame and action control.
 
