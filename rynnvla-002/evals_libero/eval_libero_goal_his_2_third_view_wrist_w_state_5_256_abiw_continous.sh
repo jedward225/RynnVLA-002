@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/RynnVLA-002/.venv/bin/activate
 apt update
 apt install libegl-dev xvfb libgl1-mesa-dri libgl1-mesa-dev libgl1-mesa-glx libstdc++6 -y
 # apt install ffmpeg libsm6 libxext6 libgl1
@@ -19,7 +20,7 @@ task_suite=libero_goal
 exp_name=his_2_third_view_wrist_w_state_5_256_abiw
 his_setting=his_2_third_view_wrist_w_state
 eval_setting=continous
-checkpoint_path=../outputs/"$task_suite"/"$exp_name"/"epoch$epoch_num"
+checkpoint_path=../ckpts/WorldVLA/model_256/libero_goal
 
 base_output_dir=../eval_outputs/"$task_suite"/"$exp_name"/"epoch_$epoch_num"/"$eval_setting"
 mkdir -p "$base_output_dir"
@@ -30,7 +31,7 @@ torchrun --nnodes=1 --nproc_per_node=1 --master_port=$((29502)) ../eval_solver_l
     --his $his_setting \
     --no_auto_resume \
     --resume_path $checkpoint_path \
-    --tokenizer_path ../ckpts/models--Alpha-VLLM--Lumina-mGPT-7B-768/snapshots/9624463a82ea5ce814af9b561dcd08a31082c3af \
+    --tokenizer_path ../ckpts/WorldVLA/chameleon/tokenizer \
     --eval_only True \
     --model_size 7B \
     --batch_size 4 \
